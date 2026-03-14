@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getStripe, STRIPE_CONFIG } from '@/lib/stripe';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -13,8 +14,8 @@ const PRO_PLAN = {
 
 // Check if Stripe is configured
 const isStripeConfigured = () => {
-  return process.env.STRIPE_SECRET_KEY && 
-         process.env.STRIPE_SECRET_KEY.startsWith('sk_');
+  const key = process.env.STRIPE_SECRET_KEY;
+  return key && key.startsWith('sk_');
 };
 
 export async function POST(request: NextRequest) {
@@ -36,7 +37,7 @@ export async function POST(request: NextRequest) {
       // Demo mode - simulate successful checkout
       console.log('Stripe not configured - Demo mode');
       
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://compress.artevotrade.com';
       
       return NextResponse.json({
         success: true,
@@ -48,9 +49,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Real Stripe checkout
-    const { stripe } = await import('@/lib/stripe');
-    
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const stripe = getStripe();
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://compress.artevotrade.com';
 
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: PRO_PLAN.currency,
             product_data: {
-              name: `CompressImage - Artevotade - Abonnement ${PRO_PLAN.name}`,
+              name: `CompressImage - Artevotrade - Abonnement ${PRO_PLAN.name}`,
               description: 'Compression d\'images illimitée - 100 images par lot',
             },
             unit_amount: PRO_PLAN.price * 100, // Convert to cents (900 = 9.00 EUR)

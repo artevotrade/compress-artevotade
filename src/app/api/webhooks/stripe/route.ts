@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe } from '@/lib/stripe';
+import { getStripe } from '@/lib/stripe';
 import { db } from '@/lib/db';
 import Stripe from 'stripe';
 
@@ -7,10 +7,21 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 // Webhook secret from Stripe Dashboard
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_placeholder';
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
 export async function POST(request: NextRequest) {
+  // Check if webhook secret is configured
+  if (!webhookSecret) {
+    console.error('STRIPE_WEBHOOK_SECRET is not configured');
+    return NextResponse.json(
+      { error: 'Webhook not configured' },
+      { status: 500 }
+    );
+  }
+
   try {
+    const stripe = getStripe();
+    
     // Get raw body
     const body = await request.text();
     

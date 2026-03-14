@@ -1,18 +1,35 @@
 import Stripe from 'stripe';
 
-// Initialize Stripe with secret key
-// In production, use environment variable: STRIPE_SECRET_KEY
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-11-20.acacia',
-  typescript: true,
+// Lazy-initialize Stripe to avoid build-time errors
+let stripeInstance: Stripe | null = null;
+
+export const getStripe = (): Stripe => {
+  if (!stripeInstance) {
+    const secretKey = process.env.STRIPE_SECRET_KEY;
+    if (!secretKey) {
+      throw new Error('STRIPE_SECRET_KEY is not configured');
+    }
+    stripeInstance = new Stripe(secretKey, {
+      apiVersion: '2024-11-20.acacia',
+      typescript: true,
+    });
+  }
+  return stripeInstance;
+};
+
+// For backward compatibility, export stripe as a getter
+export const stripe = new Proxy({} as Stripe, {
+  get(target, prop) {
+    return Reflect.get(getStripe(), prop);
+  }
 });
 
 // Price IDs for the Pro plan
 // In production, create these products in Stripe Dashboard
 export const STRIPE_CONFIG = {
   proPlanPriceId: process.env.STRIPE_PRO_PRICE_ID || 'price_pro_monthly',
-  successUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/success?session_id={CHECKOUT_SESSION_ID}`,
-  cancelUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/cancel`,
+  successUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://compress.artevotrade.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
+  cancelUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://compress.artevotrade.com'}/cancel`,
 };
 
 // Pro plan details
