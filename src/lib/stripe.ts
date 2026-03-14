@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 
 // Initialize Stripe with secret key
 // In production, use environment variable: STRIPE_SECRET_KEY
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2024-11-20.acacia',
   typescript: true,
 });
