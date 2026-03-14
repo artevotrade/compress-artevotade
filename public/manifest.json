@@ -1,0 +1,25 @@
+{
+  "name": "CompressImage - Artevotade",
+  "short_name": "CompressImage",
+  "description": "Compression d'images gratuite en ligne - Made in France par Artevotade",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10B981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "lang": "fr-FR"
+}

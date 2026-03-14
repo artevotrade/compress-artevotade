@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    String        @id @default(cuid())
+  email                 String        @unique
+  name                  String?
+  plan                  String        @default("free") // free, pro, enterprise
+  stripeCustomerId      String?
+  stripeSubscriptionId  String?
+  compressions          Compression[]
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  @@index([email])
+}
+
+model Compression {
+  id             String   @id @default(cuid())
+  userId         String?
+  originalSize   Int
+  compressedSize Int
+  format         String   // png, jpeg, webp
+  fileName       String?
+  createdAt      DateTime @default(now())
+  user           User?    @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}
