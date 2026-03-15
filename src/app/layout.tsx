@@ -9,32 +9,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://compress.artevotade.com'),
+  metadataBase: new URL('https://compress.artevotrade.com'),
   title: {
-    default: 'CompressImage - Compression d\'images en ligne | Artevotade',
-    template: '%s | CompressImage - Artevotade',
+    default: 'CompressImage - Compression d\'images en ligne | ArtevoTrade LLC',
+    template: '%s | CompressImage - ArtevoTrade',
   },
-  description: 'Compressez vos images PNG, JPEG et WebP jusqu\'à 70% sans perte de qualité. Service français, conforme RGPD, par Artevotade.',
-  keywords: ['compression image', 'réduire taille image', 'optimiser image', 'RGPD', 'France', 'artevotade'],
-  authors: [{ name: 'Artevotade' }],
-  creator: 'Artevotade',
+  description: 'Compressez vos images PNG, JPEG et WebP jusqu\'à 70% sans perte de qualité. Service pour les pays francophones, conforme RGPD, par ArtevoTrade LLC.',
+  keywords: ['compression image', 'réduire taille image', 'optimiser image', 'RGPD', 'francophone', 'artevotrade', 'compresser image'],
+  authors: [{ name: 'ArtevoTrade LLC' }],
+  creator: 'ArtevoTrade LLC',
   icons: {
     icon: '/favicon.png',
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'CompressImage - Compression d\'images en ligne | Artevotade',
-    description: 'Compressez vos images jusqu\'à 70% sans perte de qualité. Service français par Artevotade.',
-    url: 'https://compress.artevotade.com',
-    siteName: 'CompressImage - Artevotade',
+    title: 'CompressImage - Compression d\'images en ligne | ArtevoTrade LLC',
+    description: 'Compressez vos images jusqu\'à 70% sans perte de qualité. Service pour les pays francophones par ArtevoTrade LLC.',
+    url: 'https://compress.artevotrade.com',
+    siteName: 'CompressImage - ArtevoTrade',
     type: 'website',
     locale: 'fr_FR',
     images: ['/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CompressImage - Artevotade',
-    description: 'Compressez vos images jusqu\'à 70% sans perte de qualité. Service français.',
+    title: 'CompressImage - ArtevoTrade LLC',
+    description: 'Compressez vos images jusqu\'à 70% sans perte de qualité. Service pour les pays francophones.',
     images: ['/og-image.png'],
   },
   robots: {

@@ -108,7 +108,7 @@ export default function HomePage() {
           {/* Subtitle */}
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             Réduisez la taille de vos images jusqu'à <span className="font-bold bg-gradient-to-r from-fuchsia-600 to-violet-600 bg-clip-text text-transparent">70%</span> sans perte visible.
-            Service français, conforme RGPD, hébergé en Europe.
+            Service francophone, conforme RGPD, hébergé en Europe.
           </p>
 
           {/* CTA */}
@@ -142,8 +142,8 @@ export default function HomePage() {
               <span className="font-medium text-emerald-700">Conforme RGPD</span>
             </span>
             <span className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 px-3 py-1.5 rounded-full">
-              <span className="text-lg">🇫🇷</span>
-              <span className="font-medium text-blue-700">Made in France</span>
+              <span className="text-lg">🌍</span>
+              <span className="font-medium text-blue-700">Pour les francophones</span>
             </span>
           </div>
         </div>
@@ -200,7 +200,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Conformité RGPD</h3>
                 <p className="text-slate-500 leading-relaxed">
-                  Images supprimées automatiquement. Aucune donnée conservée, hébergement en France.
+                  Images supprimées automatiquement. Aucune donnée conservée, hébergement en Europe.
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ export default function HomePage() {
                 </div>
               </a>
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-                Service de compression d'images développé en France par <span className="text-violet-400 font-medium">Artevotade</span>.
+                Service de compression d'images pour les pays francophones, développé par <span className="text-violet-400 font-medium">ArtevoTrade LLC</span>.
                 Conforme RGPD, hébergé en Europe.
               </p>
             </div>
@@ -347,10 +347,10 @@ export default function HomePage() {
 
           {/* Bottom */}
           <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <p>© {new Date().getFullYear()} Artevotade - CompressImage</p>
+            <p>© {new Date().getFullYear()} ArtevoTrade LLC - CompressImage</p>
             <p className="flex items-center gap-2">
-              <span className="w-5 h-5 flex items-center justify-center text-sm">🇫🇷</span>
-              Hébergé en France
+              <span className="w-5 h-5 flex items-center justify-center text-sm">🇪🇺</span>
+              Hébergé en Europe
             </p>
           </div>
         </div>

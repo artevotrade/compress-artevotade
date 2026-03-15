@@ -22,7 +22,7 @@ import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Politique de confidentialité',
-  description: 'Politique de confidentialité de CompressImage - Artevotade - Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD.',
+  description: 'Politique de confidentialité de CompressImage - ArtevoTrade LLC - Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD.',
   alternates: {
     canonical: 'https://compress.artevotade.com/confidentialite',
   },
@@ -68,7 +68,7 @@ export default function ConfidentialitePage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-slate-600">
-              La présente politique de confidentialité décrit comment <strong>CompressImage - Artevotade</strong> 
+              La présente politique de confidentialité décrit comment <strong>CompressImage - ArtevoTrade LLC</strong> 
               (ci-après « nous », « notre » ou « le site ») collecte, utilise et protège les données 
               personnelles de ses utilisateurs dans le respect du Règlement Général sur la Protection 
               des Données (RGPD) et de la loi Informatique et Libertés.

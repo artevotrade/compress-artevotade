@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: 'Le service est-il conforme au RGPD ?',
-    answer: 'Oui. Nous sommes une entreprise française, hébergée en Europe. Vos données ne quittent jamais l\'Union Européenne. Vous pouvez demander la suppression de vos données à tout moment via contact@artevotade.com.',
+    answer: 'Oui. ArtevoTrade LLC est une entreprise américaine qui respecte le RGPD pour ses utilisateurs européens. Vos données ne quittent jamais l\'Union Européenne (hébergement à Paris). Vous pouvez demander la suppression de vos données à tout moment via contact@artevotrade.com.',
   },
 ];
 

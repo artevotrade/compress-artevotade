@@ -42,11 +42,11 @@ export default function CGUPage() {
             CGU du service CompressImage - Artevotade
           </p>
           <div className="flex flex-wrap gap-2 mt-4">
-            <Badge variant="secondary" className="bg-emerald-900/50 text-emerald-300 border-emerald-700">
-              🇫🇷 Juridiction française
-            </Badge>
             <Badge variant="secondary" className="bg-blue-900/50 text-blue-300 border-blue-700">
-              Version 1.0
+              🇺🇸 ArtevoTrade LLC - USA
+            </Badge>
+            <Badge variant="secondary" className="bg-violet-900/50 text-violet-300 border-violet-700">
+              🌍 Service francophone
             </Badge>
           </div>
         </div>
@@ -389,14 +389,14 @@ export default function CGUPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-slate-600">
-              Les présentes CGU sont régies par le droit français.
+              Les présentes CGU sont régies par le droit de l'État du New Mexico, États-Unis.
             </p>
             <p className="text-slate-600">
               En cas de litige relatif à l'interprétation ou à l'exécution des présentes CGU, 
               les parties s'engagent à rechercher une solution amiable.
             </p>
             <p className="text-slate-600">
-              À défaut d'accord amiable dans un délai de 30 jours, les tribunaux français seront 
+              À défaut d'accord amiable dans un délai de 30 jours, les tribunaux compétents de l'État du New Mexico seront 
               seuls compétents pour connaître du litige.
             </p>
           </CardContent>
@@ -415,7 +415,8 @@ export default function CGUPage() {
               Pour toute question relative aux présentes CGU :
             </p>
             <div className="mt-4">
-              <p><strong>Contact :</strong> <a href="mailto:contact@artevotade.com" className="text-emerald-600 hover:underline">contact@artevotade.com</a></p>
+              <p><strong>Email :</strong> <a href="mailto:contact@artevotrade.com" className="text-violet-600 hover:underline">contact@artevotrade.com</a></p>
+              <p><strong>Adresse :</strong> 1209 Mountain Road PL NE, Ste N, Albuquerque, NM 87110, USA</p>
             </div>
           </CardContent>
         </Card>

@@ -10,16 +10,18 @@ import {
   Scale, 
   Shield, 
   FileText,
-  ArrowLeft
+  ArrowLeft,
+  MapPin,
+  Flag
 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Mentions légales',
-  description: 'Mentions légales de CompressImage - Artevotade. Informations sur l\'éditeur, l\'hébergeur et les conditions d\'utilisation du service.',
+  description: 'Mentions légales de CompressImage - ArtevoTrade LLC. Informations sur l\'éditeur, l\'hébergeur et les conditions d\'utilisation du service.',
   alternates: {
-    canonical: 'https://compress.artevotade.com/mentions-legales',
+    canonical: 'https://compress.artevotrade.com/mentions-legales',
   },
 };
 
@@ -37,14 +39,14 @@ export default function MentionsLegalesPage() {
           </Link>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Mentions légales</h1>
           <p className="text-slate-300 text-lg">
-            Informations légales concernant le service CompressImage par Artevotade
+            Informations légales concernant le service CompressImage par ArtevoTrade LLC
           </p>
           <div className="flex flex-wrap gap-2 mt-4">
-            <Badge className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 border border-emerald-500/30">
-              🇫🇷 Entreprise française
+            <Badge className="bg-gradient-to-r from-blue-500/20 to-indigo-500/20 text-blue-300 border border-blue-500/30">
+              🇺🇸 Entreprise américaine
             </Badge>
             <Badge className="bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 text-violet-300 border border-violet-500/30">
-              ✓ Conforme RGPD
+              🌍 Service francophone
             </Badge>
           </div>
         </div>
@@ -67,24 +69,62 @@ export default function MentionsLegalesPage() {
               Le service <strong>CompressImage</strong> est édité par :
             </p>
             <div className="bg-gradient-to-r from-violet-50 to-fuchsia-50 rounded-xl p-5 space-y-2 border border-violet-100">
-              <p><strong>Raison sociale :</strong> [À compléter - Nom de l'entreprise]</p>
-              <p><strong>Forme juridique :</strong> [À compléter - SAS, SARL, etc.]</p>
-              <p><strong>Capital social :</strong> [À compléter]</p>
-              <p><strong>Siège social :</strong> [À compléter - Adresse complète]</p>
-              <p><strong>SIRET :</strong> [À compléter]</p>
-              <p><strong>N° TVA intracommunautaire :</strong> [À compléter]</p>
+              <p><strong>Raison sociale :</strong> ArtevoTrade LLC</p>
+              <p><strong>Forme juridique :</strong> Limited Liability Company (LLC)</p>
+              <p><strong>État d'immatriculation :</strong> New Mexico, États-Unis</p>
+              <p><strong>Siège social :</strong> 1209 Mountain Road PL NE, Ste N, Albuquerque, NM 87110, USA</p>
+              <p><strong>Droit applicable :</strong> État du New Mexico, États-Unis</p>
             </div>
             <div className="flex items-center gap-2 text-slate-600">
               <Mail className="w-4 h-4" />
-              <span><strong>Contact :</strong> contact@artevotade.com</span>
+              <span><strong>Contact :</strong> <a href="mailto:contact@artevotrade.com" className="text-violet-600 hover:underline">contact@artevotrade.com</a></span>
             </div>
             <div className="flex items-center gap-2 text-slate-600">
               <Globe className="w-4 h-4" />
-              <span><strong>Site web :</strong> https://compress.artevotade.com</span>
+              <span><strong>Site web :</strong> https://compress.artevotrade.com</span>
             </div>
             <p className="text-sm text-slate-500 italic">
-              Directeur de la publication : [À compléter - Nom du responsable]
+              Directeur de la publication : Le gérant d'ArtevoTrade LLC
             </p>
+          </CardContent>
+        </Card>
+
+        {/* Zone de service */}
+        <Card className="border-2 border-slate-100 hover:border-blue-200 transition-colors">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-xl">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                <Flag className="w-5 h-5 text-white" />
+              </div>
+              2. Zone de service
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-slate-600">
+              CompressImage est un service destiné aux <strong>pays francophones</strong>. 
+              Notre service est disponible dans les régions suivantes :
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-slate-50 rounded-lg p-4">
+                <h4 className="font-semibold text-slate-800 mb-3">🇫🇷 Europe francophone</h4>
+                <ul className="text-sm text-slate-600 space-y-1">
+                  <li>• France métropolitaine</li>
+                  <li>• Belgique</li>
+                  <li>• Suisse</li>
+                  <li>• Luxembourg</li>
+                  <li>• Monaco</li>
+                </ul>
+              </div>
+              <div className="bg-slate-50 rounded-lg p-4">
+                <h4 className="font-semibold text-slate-800 mb-3">🌍 Autres régions francophones</h4>
+                <ul className="text-sm text-slate-600 space-y-1">
+                  <li>• Canada (Québec)</li>
+                  <li>• Afrique francophone</li>
+                  <li>• Antilles françaises</li>
+                  <li>• Océan Indien</li>
+                </ul>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -95,7 +135,7 @@ export default function MentionsLegalesPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
                 <Server className="w-5 h-5 text-white" />
               </div>
-              2. Hébergeur du site
+              3. Hébergeur du site
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -112,6 +152,10 @@ export default function MentionsLegalesPage() {
               <Shield className="w-4 h-4 text-emerald-600" />
               <span>Hébergement sécurisé avec certificat SSL/TLS</span>
             </div>
+            <div className="flex items-center gap-2 text-sm text-slate-500">
+              <MapPin className="w-4 h-4 text-emerald-600" />
+              <span>Serveurs européens (Paris, France - région CDG1)</span>
+            </div>
           </CardContent>
         </Card>
 
@@ -122,25 +166,20 @@ export default function MentionsLegalesPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center">
                 <Scale className="w-5 h-5 text-white" />
               </div>
-              3. Propriété intellectuelle
+              4. Propriété intellectuelle
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-slate-600">
               L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels, etc.) 
-              est la propriété exclusive d'Artevotade ou de ses partenaires et est protégé par les lois 
-              françaises et internationales relatives à la propriété intellectuelle.
+              est la propriété exclusive d'ArtevoTrade LLC ou de ses partenaires et est protégé par les lois 
+              américaines et internationales relatives à la propriété intellectuelle.
             </p>
             <Separator />
             <p className="text-slate-600">
               Toute reproduction, représentation, modification, publication, adaptation de tout ou partie 
               des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf 
-              autorisation écrite préalable d'Artevotade.
-            </p>
-            <p className="text-slate-600">
-              Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient 
-              sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux 
-              dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
+              autorisation écrite préalable d'ArtevoTrade LLC.
             </p>
           </CardContent>
         </Card>
@@ -152,18 +191,19 @@ export default function MentionsLegalesPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              4. Protection des données personnelles
+              5. Protection des données personnelles
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-slate-600">
-              Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique 
-              et Libertés, nous nous engageons à protéger les données personnelles de nos utilisateurs.
+              Conformément au Règlement Général sur la Protection des Données (RGPD) et aux lois applicables 
+              en matière de protection des données, nous nous engageons à protéger les données personnelles 
+              de nos utilisateurs.
             </p>
             <Separator />
             <div className="space-y-3">
               <p className="text-slate-600">
-                <strong>Responsable de traitement :</strong> Artevotade
+                <strong>Responsable de traitement :</strong> ArtevoTrade LLC
               </p>
               <p className="text-slate-600">
                 <strong>Finalités du traitement :</strong>
@@ -193,7 +233,7 @@ export default function MentionsLegalesPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              5. Cookies
+              6. Cookies
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -210,34 +250,6 @@ export default function MentionsLegalesPage() {
           </CardContent>
         </Card>
 
-        {/* Limitation de responsabilité */}
-        <Card className="border-2 border-slate-100 hover:border-slate-200 transition-colors">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-xl">
-              <div className="w-10 h-10 bg-gradient-to-br from-slate-500 to-slate-600 rounded-xl flex items-center justify-center">
-                <Scale className="w-5 h-5 text-white" />
-              </div>
-              6. Limitation de responsabilité
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-slate-600">
-              Artevotade s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations 
-              diffusées sur ce site. Toutefois, Artevotade ne peut garantir l'exactitude, la précision 
-              ou l'exhaustivité des informations mises à disposition sur ce site.
-            </p>
-            <Separator />
-            <p className="text-slate-600">
-              En conséquence, Artevotade décline toute responsabilité :
-            </p>
-            <ul className="list-disc list-inside text-slate-600 space-y-1 ml-4">
-              <li>Pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur le site</li>
-              <li>Pour tous dommages résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations mises à disposition sur le site</li>
-              <li>Et plus généralement de tous dommages directs ou indirects, quelles qu'en soient les causes</li>
-            </ul>
-          </CardContent>
-        </Card>
-
         {/* Droit applicable */}
         <Card className="border-2 border-slate-100 hover:border-indigo-200 transition-colors">
           <CardHeader>
@@ -250,10 +262,17 @@ export default function MentionsLegalesPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-slate-600">
-              Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut 
-              d'accord amiable, le litige sera porté devant les tribunaux français conformément aux règles 
-              de compétence en vigueur.
+              Les présentes mentions légales sont régies par le droit de l'État du New Mexico, États-Unis. 
+              En cas de litige et à défaut d'accord amiable, les tribunaux compétents de l'État du New Mexico 
+              seront seuls compétents.
             </p>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p className="text-blue-800 text-sm">
+                <strong>Note pour les utilisateurs européens :</strong> Conformément au RGPD, vous disposez 
+                de droits spécifiques concernant vos données personnelles. Pour les exercer, contactez-nous 
+                à <a href="mailto:contact@artevotrade.com" className="text-violet-600 hover:underline">contact@artevotrade.com</a>.
+              </p>
+            </div>
           </CardContent>
         </Card>
 
@@ -262,15 +281,16 @@ export default function MentionsLegalesPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-violet-700">
               <Mail className="w-5 h-5" />
-              Contact
+              8. Contact
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-slate-600">
               Pour toute question concernant ces mentions légales, vous pouvez nous contacter :
             </p>
-            <div className="mt-4">
-              <p><strong>Contact :</strong> <a href="mailto:contact@artevotade.com" className="text-violet-600 hover:underline">contact@artevotade.com</a></p>
+            <div className="mt-4 space-y-2">
+              <p><strong>Email :</strong> <a href="mailto:contact@artevotrade.com" className="text-violet-600 hover:underline">contact@artevotrade.com</a></p>
+              <p><strong>Adresse :</strong> 1209 Mountain Road PL NE, Ste N, Albuquerque, NM 87110, USA</p>
             </div>
           </CardContent>
         </Card>
