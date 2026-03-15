@@ -63,7 +63,16 @@ export function PricingSection() {
 
   const handlePlanAction = async (planId: string) => {
     if (planId === 'free') {
-      document.getElementById('compress')?.scrollIntoView({ behavior: 'smooth' });
+      const compressSection = document.getElementById('compress');
+      if (compressSection) {
+        const headerOffset = 80;
+        const elementPosition = compressSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
       return;
     }
 
@@ -76,7 +85,7 @@ export function PricingSection() {
       setLoading(planId);
 
       try {
-        const response = await fetch('/api/stripe/checkout', {
+        const response = await fetch('/api/paypal/checkout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ plan: 'pro' }),
@@ -220,7 +229,7 @@ export function PricingSection() {
             <svg className="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
-            <span className="text-sm font-medium text-violet-700">Paiement sécurisé Stripe</span>
+            <span className="text-sm font-medium text-violet-700">Paiement sécurisé PayPal</span>
           </span>
           <span className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-2 rounded-full border border-blue-100">
             <span className="text-lg">🇫🇷</span>

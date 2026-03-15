@@ -9,11 +9,29 @@ import { FaqSection } from '@/components/faq-section';
 
 export default function HomePage() {
   const scrollToUpload = useCallback(() => {
-    document.getElementById('compress')?.scrollIntoView({ behavior: 'smooth' });
+    const compressSection = document.getElementById('compress');
+    if (compressSection) {
+      const headerOffset = 80;
+      const elementPosition = compressSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }, []);
 
   const scrollToPricing = useCallback(() => {
-    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      const headerOffset = 80;
+      const elementPosition = pricingSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }, []);
 
   return (
