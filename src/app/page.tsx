@@ -12,6 +12,10 @@ export default function HomePage() {
     document.getElementById('compress')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
+  const scrollToPricing = useCallback(() => {
+    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -35,9 +39,9 @@ export default function HomePage() {
             <a href="#features" className="text-sm text-slate-600 hover:text-fuchsia-600 transition-colors font-medium">
               Fonctionnalités
             </a>
-            <a href="#pricing" className="text-sm text-slate-600 hover:text-fuchsia-600 transition-colors font-medium">
+            <button onClick={scrollToPricing} className="text-sm text-slate-600 hover:text-fuchsia-600 transition-colors font-medium">
               Tarifs
-            </a>
+            </button>
             <a href="/api-docs" className="text-sm text-slate-600 hover:text-fuchsia-600 transition-colors font-medium">
               API
             </a>
@@ -102,6 +106,7 @@ export default function HomePage() {
             <Button
               variant="outline"
               size="lg"
+              onClick={scrollToPricing}
               className="h-14 px-10 text-base border-2 border-violet-200 text-violet-700 hover:text-violet-900 hover:bg-violet-50 hover:border-violet-300 font-medium"
             >
               Voir les tarifs
